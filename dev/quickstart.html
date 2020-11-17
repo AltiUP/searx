@@ -1,13 +1,18 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Development Quickstart &#8212; Searx Documentation (Searx-0.16.0.tex)</title>
+    <title>Development Quickstart &#8212; Searx Documentation (Searx-0.17.0.tex)</title>
     <link rel="stylesheet" href="../_static/searx.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/semantic-ui-2.4.1/segment.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/semantic-ui-2.4.1/menu.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/semantic-ui-2.4.1/tab.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/tabs.css" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
@@ -27,13 +32,17 @@
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
           <a href="contribution_guide.html" title="How to contribute"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="index.html" title="Developer documentation"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">Searx Documentation (Searx-0.16.0.tex)</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Developer documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">Searx Documentation (Searx-0.17.0.tex)</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Developer documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Development Quickstart</a></li> 
       </ul>
     </div>  
 
@@ -60,9 +69,9 @@ gives a short introduction to the <code class="docutils literal notranslate"><sp
 source is cloned to <code class="docutils literal notranslate"><span class="pre">~/myprojects/searx</span></code>.  Then create and activate the
 searx-ve virtualenv and install the required packages using <code class="docutils literal notranslate"><span class="pre">manage.sh</span></code>.</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ~/myprojects
-git clone https://github.com/asciimoo/searx.git
+git clone https://github.com/searx/searx.git
 <span class="nb">cd</span> searx
-virtualenv searx-ve
+python3 -m venv searx-ve
 . ./searx-ve/bin/activate
 ./manage.sh update_dev_packages
 </pre></div>
@@ -109,16 +118,16 @@ sudo -H npm install -g less
 </div>
 </div>
 </div>
-<div class="section" id="how-to-build-the-source-of-the-oscar-theme">
-<h2>How to build the source of the oscar theme<a class="headerlink" href="#how-to-build-the-source-of-the-oscar-theme" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="how-to-build-the-source-of-the-themes">
+<h2>How to build the source of the themes<a class="headerlink" href="#how-to-build-the-source-of-the-themes" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="https://gruntjs.com/">Grunt</a> must be installed in order to build the javascript sources. It depends on
 NodeJS, so first Node has to be installed.</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo -H apt-get install nodejs
-sudo -H npm install -g grunt-cli
+make node.env
 </pre></div>
 </div>
 <p>After installing grunt, the files can be built using the following command:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>./manage.sh grunt_build
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>make themes
 </pre></div>
 </div>
 </div>
@@ -134,7 +143,7 @@ session / see <a class="reference internal" href="makefile.html#make-run"><span 
 always a good idea to turn on debug logging.  When debug logging is enabled a
 stack trace appears, instead of the cryptic <code class="docutils literal notranslate"><span class="pre">Internal</span> <span class="pre">Server</span> <span class="pre">Error</span></code>
 message. It can be turned on by setting <code class="docutils literal notranslate"><span class="pre">debug:</span> <span class="pre">False</span></code> to <code class="docutils literal notranslate"><span class="pre">debug:</span> <span class="pre">True</span></code> in
-<a class="reference external" href="https://github.com/asciimoo/searx/blob/master/searx/settings.yml">settings.yml</a>.</p>
+<a class="reference external" href="https://github.com/searx/searx/blob/master/searx/settings.yml">settings.yml</a>.</p>
 </dd>
 </dl>
 <div class="sidebar">
@@ -151,6 +160,7 @@ must be created containing these format fixes.  This phase can be skipped if
 </div>
 
 
+            <div class="clearer"></div>
           </div>
         </div>
       </div>
@@ -166,9 +176,9 @@ must be created containing these format fixes.  This phase can be skipped if
 
   <h3>Project Links</h3>
   <ul>
-    <li><a href="https://github.com/asciimoo/searx">Source</a>
+    <li><a href="https://github.com/searx/searx">Source</a>
   
-    <li><a href="https://github.com/asciimoo/searx/wiki">Wiki</a>
+    <li><a href="https://github.com/searx/searx/wiki">Wiki</a>
   
     <li><a href="https://searx.space/">Public instances</a>
   
@@ -202,7 +212,7 @@ must be created containing these format fixes.  This phase can be skipped if
   
     <div class="footer" role="contentinfo">
         &#169; Copyright 2015-2020, Adam Tauber, Noémi Ványi.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.4.4.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
     </div>
   <script src="../_static/version_warning_offset.js"></script>
 
